@@ -1,0 +1,6 @@
+framework module Pods_rememoriTests {
+  umbrella header "Pods-rememoriTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
