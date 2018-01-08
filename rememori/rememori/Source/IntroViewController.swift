@@ -9,6 +9,7 @@
 import RxCocoa
 import RxDataSources
 import RxSwift
+import SnapKit
 
 final class IntroViewController: UIViewController, ViewType {
   
@@ -16,7 +17,8 @@ final class IntroViewController: UIViewController, ViewType {
   
   private struct UI {
     static let baseMargin = CGFloat(8)
-    static let tableViewFrame = UIScreen.main.bounds
+    static let scrollViewFrame = UIScreen.main.bounds
+    static let scrollViewContentSize = CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height )
     static let estimatedRowHeight = CGFloat(80)
   }
   
@@ -24,11 +26,25 @@ final class IntroViewController: UIViewController, ViewType {
   
   var viewModel: IntroViewModelType!
   var disposeBag: DisposeBag!
+  private let scrolView = UIScrollView(frame: UI.scrollViewFrame)
+  private let imageViews = [UIImageView(),UIImageView()]
   
   // MARK: Setup UI
   
   func setupUI() {
+    view.backgroundColor = UIColor.white
     
+    imageViews[0].image = UIImage.init(named: "bg1")
+    imageViews[1].image = UIImage.init(named: "bg2")
+    
+    imageViews[0].snp.makeConstraints { make in
+      
+    }
+    
+    scrolView.contentSize = UI.scrollViewContentSize
+    scrolView.isPagingEnabled = true
+    
+    view.addSubviews([scrolView])
   }
   
   // MARK: - -> Rx Event Binding

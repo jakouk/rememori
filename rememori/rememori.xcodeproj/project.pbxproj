@@ -17,6 +17,7 @@
 		BD6BB6752003050B00795AAB /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6BB6742003050B00795AAB /* ViewType.swift */; };
 		BD6BB6772003051600795AAB /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6BB6762003051600795AAB /* ViewModelType.swift */; };
 		BD6BB67A2003101800795AAB /* Reactive+Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6BB6792003101800795AAB /* Reactive+Base.swift */; };
+		BD6BB67D20034CB200795AAB /* UIView+SubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6BB67C20034CB200795AAB /* UIView+SubView.swift */; };
 		DAB343745586D85487B64F78 /* Pods_rememori.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE2EC9F5E62D0A1161B7E5A /* Pods_rememori.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		BD6BB6742003050B00795AAB /* ViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
 		BD6BB6762003051600795AAB /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		BD6BB6792003101800795AAB /* Reactive+Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Base.swift"; sourceTree = "<group>"; };
+		BD6BB67C20034CB200795AAB /* UIView+SubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SubView.swift"; sourceTree = "<group>"; };
 		F6E0A8DB729B75245651BE97 /* Pods-rememoriTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rememoriTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rememoriTests/Pods-rememoriTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				BD6BB6792003101800795AAB /* Reactive+Base.swift */,
+				BD6BB67C20034CB200795AAB /* UIView+SubView.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				BD6BB6752003050B00795AAB /* ViewType.swift in Sources */,
 				BD6BB6772003051600795AAB /* ViewModelType.swift in Sources */,
 				BD6BB671200304B700795AAB /* IntroViewController.swift in Sources */,
+				BD6BB67D20034CB200795AAB /* UIView+SubView.swift in Sources */,
 				BD6BB67A2003101800795AAB /* Reactive+Base.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

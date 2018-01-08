@@ -23,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let introViewModel = IntroViewModel()
     let introView = IntroViewController.create(with: introViewModel)
-    introView.view.backgroundColor = UIColor.white
     window?.rootViewController = introView
     window?.makeKeyAndVisible()
   }
