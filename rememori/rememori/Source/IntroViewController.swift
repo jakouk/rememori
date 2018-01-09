@@ -41,8 +41,7 @@ final class IntroViewController: UIViewController, ViewType {
     
     scrolView.snp.makeConstraints { make in
       make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
-      make.left.equalTo(0)
-      make.right.equalTo(0)
+      make.left.right.equalTo(0)
       make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
     }
     
@@ -66,7 +65,6 @@ final class IntroViewController: UIViewController, ViewType {
       make.bottom.equalTo(scrolView.snp.bottom)
       //make.width.equalTo(imageViews[0].snp.width)
     }
-    
   }
   
   // MARK: - -> Rx Event Binding

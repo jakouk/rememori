@@ -18,6 +18,10 @@
 		BD6BB6772003051600795AAB /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6BB6762003051600795AAB /* ViewModelType.swift */; };
 		BD6BB67A2003101800795AAB /* Reactive+Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6BB6792003101800795AAB /* Reactive+Base.swift */; };
 		BD6BB67D20034CB200795AAB /* UIView+SubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6BB67C20034CB200795AAB /* UIView+SubView.swift */; };
+		BD7C41012004AF34002C0F24 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7C41002004AF34002C0F24 /* QuizViewController.swift */; };
+		BD7C41032004AF4D002C0F24 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7C41022004AF4D002C0F24 /* QuizViewModel.swift */; };
+		BD7C41052004B5A3002C0F24 /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7C41042004B5A3002C0F24 /* StudyViewController.swift */; };
+		BD7C41072004B5B2002C0F24 /* StudyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7C41062004B5B2002C0F24 /* StudyViewModel.swift */; };
 		DAB343745586D85487B64F78 /* Pods_rememori.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE2EC9F5E62D0A1161B7E5A /* Pods_rememori.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +55,10 @@
 		BD6BB6762003051600795AAB /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		BD6BB6792003101800795AAB /* Reactive+Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Base.swift"; sourceTree = "<group>"; };
 		BD6BB67C20034CB200795AAB /* UIView+SubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SubView.swift"; sourceTree = "<group>"; };
+		BD7C41002004AF34002C0F24 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		BD7C41022004AF4D002C0F24 /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
+		BD7C41042004B5A3002C0F24 /* StudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewController.swift; sourceTree = "<group>"; };
+		BD7C41062004B5B2002C0F24 /* StudyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewModel.swift; sourceTree = "<group>"; };
 		F6E0A8DB729B75245651BE97 /* Pods-rememoriTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rememoriTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rememoriTests/Pods-rememoriTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +137,10 @@
 				BD6BB6782003051C00795AAB /* Base */,
 				BD6BB670200304B700795AAB /* IntroViewController.swift */,
 				BD6BB672200304C900795AAB /* IntroViewModel.swift */,
+				BD7C41002004AF34002C0F24 /* QuizViewController.swift */,
+				BD7C41022004AF4D002C0F24 /* QuizViewModel.swift */,
+				BD7C41042004B5A3002C0F24 /* StudyViewController.swift */,
+				BD7C41062004B5B2002C0F24 /* StudyViewModel.swift */,
 				BD6BB67B2003103900795AAB /* Utility */,
 			);
 			path = Source;
@@ -398,9 +410,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD7C41052004B5A3002C0F24 /* StudyViewController.swift in Sources */,
 				BD6BB64E2003025300795AAB /* AppDelegate.swift in Sources */,
 				BD6BB673200304C900795AAB /* IntroViewModel.swift in Sources */,
 				BD6BB6752003050B00795AAB /* ViewType.swift in Sources */,
+				BD7C41032004AF4D002C0F24 /* QuizViewModel.swift in Sources */,
+				BD7C41012004AF34002C0F24 /* QuizViewController.swift in Sources */,
+				BD7C41072004B5B2002C0F24 /* StudyViewModel.swift in Sources */,
 				BD6BB6772003051600795AAB /* ViewModelType.swift in Sources */,
 				BD6BB671200304B700795AAB /* IntroViewController.swift in Sources */,
 				BD6BB67D20034CB200795AAB /* UIView+SubView.swift in Sources */,
