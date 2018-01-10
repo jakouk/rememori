@@ -6,4 +6,10 @@
 //  Copyright © 2018년 kimin. All rights reserved.
 //
 
-import Foundation
+import RxCocoa
+import RxDataSources
+import RxSwift
+
+final class StudyViewController: UIViewController, ViewType {
+  
+}

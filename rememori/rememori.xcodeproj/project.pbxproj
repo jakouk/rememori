@@ -22,6 +22,10 @@
 		BD7C41032004AF4D002C0F24 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7C41022004AF4D002C0F24 /* QuizViewModel.swift */; };
 		BD7C41052004B5A3002C0F24 /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7C41042004B5A3002C0F24 /* StudyViewController.swift */; };
 		BD7C41072004B5B2002C0F24 /* StudyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7C41062004B5B2002C0F24 /* StudyViewModel.swift */; };
+		BD7C92B32005EAC000C8736C /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7C92B22005EAC000C8736C /* SettingViewController.swift */; };
+		BD7C92B52005EACF00C8736C /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7C92B42005EACF00C8736C /* SettingViewModel.swift */; };
+		BD7C92B72005EB0600C8736C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7C92B62005EB0600C8736C /* HomeViewController.swift */; };
+		BD7C92B92005EB0F00C8736C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7C92B82005EB0F00C8736C /* HomeViewModel.swift */; };
 		DAB343745586D85487B64F78 /* Pods_rememori.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE2EC9F5E62D0A1161B7E5A /* Pods_rememori.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +63,10 @@
 		BD7C41022004AF4D002C0F24 /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
 		BD7C41042004B5A3002C0F24 /* StudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewController.swift; sourceTree = "<group>"; };
 		BD7C41062004B5B2002C0F24 /* StudyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewModel.swift; sourceTree = "<group>"; };
+		BD7C92B22005EAC000C8736C /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		BD7C92B42005EACF00C8736C /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		BD7C92B62005EB0600C8736C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BD7C92B82005EB0F00C8736C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F6E0A8DB729B75245651BE97 /* Pods-rememoriTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rememoriTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rememoriTests/Pods-rememoriTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,12 +143,9 @@
 			isa = PBXGroup;
 			children = (
 				BD6BB6782003051C00795AAB /* Base */,
-				BD6BB670200304B700795AAB /* IntroViewController.swift */,
-				BD6BB672200304C900795AAB /* IntroViewModel.swift */,
-				BD7C41002004AF34002C0F24 /* QuizViewController.swift */,
-				BD7C41022004AF4D002C0F24 /* QuizViewModel.swift */,
-				BD7C41042004B5A3002C0F24 /* StudyViewController.swift */,
-				BD7C41062004B5B2002C0F24 /* StudyViewModel.swift */,
+				BD7C92BA2005EEC400C8736C /* View */,
+				BD7C92BB2005EED100C8736C /* ViewModel */,
+				BD7C92BC2005EEF600C8736C /* Model */,
 				BD6BB67B2003103900795AAB /* Utility */,
 			);
 			path = Source;
@@ -170,6 +175,37 @@
 				BD6BB67C20034CB200795AAB /* UIView+SubView.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		BD7C92BA2005EEC400C8736C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BD6BB670200304B700795AAB /* IntroViewController.swift */,
+				BD7C41002004AF34002C0F24 /* QuizViewController.swift */,
+				BD7C41042004B5A3002C0F24 /* StudyViewController.swift */,
+				BD7C92B22005EAC000C8736C /* SettingViewController.swift */,
+				BD7C92B62005EB0600C8736C /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BD7C92BB2005EED100C8736C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BD6BB672200304C900795AAB /* IntroViewModel.swift */,
+				BD7C41022004AF4D002C0F24 /* QuizViewModel.swift */,
+				BD7C41062004B5B2002C0F24 /* StudyViewModel.swift */,
+				BD7C92B42005EACF00C8736C /* SettingViewModel.swift */,
+				BD7C92B82005EB0F00C8736C /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BD7C92BC2005EEF600C8736C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F5C6B2C5C0909C259EE570E7 /* Frameworks */ = {
@@ -413,7 +449,9 @@
 				BD7C41052004B5A3002C0F24 /* StudyViewController.swift in Sources */,
 				BD6BB64E2003025300795AAB /* AppDelegate.swift in Sources */,
 				BD6BB673200304C900795AAB /* IntroViewModel.swift in Sources */,
+				BD7C92B52005EACF00C8736C /* SettingViewModel.swift in Sources */,
 				BD6BB6752003050B00795AAB /* ViewType.swift in Sources */,
+				BD7C92B72005EB0600C8736C /* HomeViewController.swift in Sources */,
 				BD7C41032004AF4D002C0F24 /* QuizViewModel.swift in Sources */,
 				BD7C41012004AF34002C0F24 /* QuizViewController.swift in Sources */,
 				BD7C41072004B5B2002C0F24 /* StudyViewModel.swift in Sources */,
@@ -421,6 +459,8 @@
 				BD6BB671200304B700795AAB /* IntroViewController.swift in Sources */,
 				BD6BB67D20034CB200795AAB /* UIView+SubView.swift in Sources */,
 				BD6BB67A2003101800795AAB /* Reactive+Base.swift in Sources */,
+				BD7C92B92005EB0F00C8736C /* HomeViewModel.swift in Sources */,
+				BD7C92B32005EAC000C8736C /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
