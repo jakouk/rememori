@@ -18,7 +18,7 @@ protocol SettingViewModelType: ViewModelType {
   // UI
 }
 
-struct SettingViewModel: QuizViewModelType {
+struct SettingViewModel: SettingViewModelType {
   // MARK: Properties
   // MARK: -> Event
   

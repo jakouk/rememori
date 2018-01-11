@@ -15,7 +15,7 @@ final class QuizViewController: UIViewController, ViewType {
   // MARK: UI Metrics
   
   private struct UI {
-
+    
   }
   
   // MARK: Properties
@@ -25,7 +25,7 @@ final class QuizViewController: UIViewController, ViewType {
   
   
   func setupUI() {
-    
+    view.backgroundColor = UIColor.white
   }
   
   func setupEventBinding() {

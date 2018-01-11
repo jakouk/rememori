@@ -12,4 +12,27 @@ import RxSwift
 
 final class StudyViewController: UIViewController, ViewType {
   
+  // MARK: UI Metrics
+  
+  private struct UI {
+    
+  }
+  
+  // MARK: Properties
+  
+  var viewModel: StudyViewModelType!
+  var disposeBag: DisposeBag!
+  
+  
+  func setupUI() {
+    view.backgroundColor = UIColor.yellow
+  }
+  
+  func setupEventBinding() {
+    
+  }
+  
+  func setupUIBinding() {
+    
+  }
 }

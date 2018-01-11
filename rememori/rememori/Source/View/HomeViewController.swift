@@ -12,4 +12,27 @@ import RxSwift
 
 final class HomeViewController: UIViewController, ViewType {
   
+  // MARK: UI Metrics
+  
+  private struct UI {
+    
+  }
+  
+  // MARK: Properties
+  
+  var viewModel: HomeViewModelType!
+  var disposeBag: DisposeBag!
+  
+  
+  func setupUI() {
+    view.backgroundColor = UIColor.blue
+  }
+  
+  func setupEventBinding() {
+    
+  }
+  
+  func setupUIBinding() {
+    
+  }
 }

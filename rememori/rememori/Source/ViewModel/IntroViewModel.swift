@@ -14,11 +14,11 @@ import RxSwift
 protocol IntroViewModelType: ViewModelType {
   // Event
   var viewWillAppear: PublishSubject<Void> { get }
-  var didTapHomeButton: PublishSubject<String> { get }
+  var didTapHomeButton: PublishSubject<Void> { get }
   
   
   // UI
-  //var showHome: Driver<Bool> { get }
+  var showHome: Driver<String> { get }
   
 }
 
@@ -29,16 +29,18 @@ struct IntroViewModel: IntroViewModelType {
   // MARK: -> Event
   
   let viewWillAppear = PublishSubject<Void>()
-  let didTapHomeButton = PublishSubject<String>()
+  let didTapHomeButton = PublishSubject<Void>()
   
   // MARK: <- UI
-//  let showHome: Driver<Bool>
+  let showHome: Driver<String>
   
   // MARK: - Initialize
   
   init() {
-    
-//    showHome = didTapHomeButton.map{ String($0) }.asDriver(onErrorJustReturn: "")
+    print("IntroView")
+    showHome = didTapHomeButton
+                .map { "didHomeButton" }
+                .asDriver(onErrorJustReturn: "")
     
   }
 }

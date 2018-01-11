@@ -16,9 +16,10 @@ protocol HomeViewModelType: ViewModelType {
   
   
   // UI
+  
 }
 
-struct HomeViewModel: QuizViewModelType {
+struct HomeViewModel: HomeViewModelType {
   // MARK: Properties
   // MARK: -> Event
   

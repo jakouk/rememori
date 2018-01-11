@@ -12,4 +12,27 @@ import RxSwift
 
 final class SettingViewController: UIViewController, ViewType {
   
+  // MARK: UI Metrics
+  
+  private struct UI {
+    
+  }
+  
+  // MARK: Properties
+  
+  var viewModel: SettingViewModel!
+  var disposeBag: DisposeBag!
+  
+  
+  func setupUI() {
+    view.backgroundColor = UIColor.yellow
+  }
+  
+  func setupEventBinding() {
+    
+  }
+  
+  func setupUIBinding() {
+    
+  }
 }

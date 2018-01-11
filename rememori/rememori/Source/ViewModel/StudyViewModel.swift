@@ -20,7 +20,7 @@ protocol StudyViewModelType: ViewModelType {
 
 // MARK: - Class Implementation
 
-struct StudyViewModel: QuizViewModelType {
+struct StudyViewModel: StudyViewModelType {
   // MARK: Properties
   // MARK: -> Event
   

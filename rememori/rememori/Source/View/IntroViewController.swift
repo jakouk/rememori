@@ -25,7 +25,7 @@ final class IntroViewController: UIViewController, ViewType {
   
   var viewModel: IntroViewModelType!
   var disposeBag: DisposeBag!
-  private let scrolView = UIScrollView()
+  private let scrollView = UIScrollView()
   private let imageViews = [UIImageView() ,UIImageView()]
   private let homeButton = UIButton()
   
@@ -35,47 +35,67 @@ final class IntroViewController: UIViewController, ViewType {
     
     view.backgroundColor = UIColor.white
     
-    view.addSubviews([scrolView])
-    scrolView.contentSize = UI.scrollViewContentSize
-    scrolView.isPagingEnabled = true
-    scrolView.snp.makeConstraints { make in
+    view.addSubviews([scrollView])
+    scrollView.contentSize = UI.scrollViewContentSize
+    scrollView.isPagingEnabled = true
+    scrollView.snp.makeConstraints { make in
       make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
       make.left.right.equalTo(0)
       make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
     }
     
-    scrolView.addSubviews([imageViews[0],imageViews[1]])
+    scrollView.addSubviews([imageViews[0],imageViews[1]])
     imageViews[0].image = UIImage.init(named: "bg1")
     imageViews[1].image = UIImage.init(named: "bg2")
     imageViews[0].snp.makeConstraints { make in
-      make.top.equalTo(scrolView.snp.top)
+      make.top.equalTo(scrollView.snp.top)
       make.left.equalTo(0)
       make.right.equalTo(imageViews[1].snp.left)
-      make.bottom.equalTo(scrolView.snp.bottom)
+      make.bottom.equalTo(scrollView.snp.bottom)
       make.width.equalTo(imageViews[1].snp.width)
     }
     imageViews[1].snp.makeConstraints { make in
-      make.top.equalTo(scrolView.snp.top)
+      make.top.equalTo(scrollView.snp.top)
       make.left.equalTo(imageViews[0].snp.right)
       make.right.equalTo(0)
-      make.bottom.equalTo(scrolView.snp.bottom)
+      make.bottom.equalTo(scrollView.snp.bottom)
     }
     
+    scrollView.addSubview(homeButton)
+    homeButton.backgroundColor = .white
     
-    
+    homeButton.snp.makeConstraints { make in
+      make.height.equalTo(44)
+      make.width.equalTo(100)
+      make.right.equalToSuperview().offset(-20)
+      make.bottom.equalToSuperview().offset(-20)
+    }
   }
   
   // MARK: - -> Rx Event Binding
   
   func setupEventBinding() {
+    
     rx.viewWillAppear
       .bind(to: viewModel.viewWillAppear)
+      .disposed(by: disposeBag)
+    
+    // HomeButton
+    
+    homeButton.rx.tap
+      .bind(to: viewModel.didTapHomeButton)
       .disposed(by: disposeBag)
   }
   
   // MARK: - <- Rx UI Binding
   
   func setupUIBinding() {
+    
+    viewModel.showHome
+      .drive(onNext: { urlString in
+        print(urlString)
+      AppDelegate.instance?.presentTabbarView()
+    }).disposed(by: disposeBag)
     
   }
   
