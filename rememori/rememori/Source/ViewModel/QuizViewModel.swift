@@ -7,29 +7,40 @@
 //
 
 import RxCocoa
+import RxDataSources
 import RxSwift
 
-protocol QuizViewModelType: ViewModelType {
-  // Event
+protocol QuizViewModelType {
+  var inputs: QuizViewModelInputs { get }
+  var outputs: QuizViewModelOutputs { get }
+}
+
+protocol QuizViewModelInputs {
   var viewWillAppear: PublishSubject<Void> { get }
+}
+
+protocol QuizViewModelOutputs {
   
-  
-  // UI
 }
 
 // MARK: - Class Implementation
 
-struct QuizViewModel: QuizViewModelType {
-  // MARK: Properties
+struct QuizViewModel: QuizViewModelType, QuizViewModelInputs, QuizViewModelOutputs  {
+  
+  var inputs: QuizViewModelInputs { return self }
+  var outputs: QuizViewModelOutputs { return self }
+  
+  // MARK: Input
   // MARK: -> Event
   
   let viewWillAppear = PublishSubject<Void>()
   
+  // MARK: Output
   // MARK: <- UI
   
   
+  // MARK: Output
   // MARK: - Initialize
-  
   init() {
     
   }

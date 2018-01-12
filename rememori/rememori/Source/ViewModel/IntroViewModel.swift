@@ -10,37 +10,45 @@ import RxCocoa
 import RxDataSources
 import RxSwift
 
+protocol IntroViewModelType {
+  var inputs: IntroViewModelInputs { get }
+  var outputs: IntroViewModelOutputs { get }
+}
 
-protocol IntroViewModelType: ViewModelType {
-  // Event
+// MARK: Input
+// MARK: - Event
+protocol IntroViewModelInputs {
   var viewWillAppear: PublishSubject<Void> { get }
   var didTapHomeButton: PublishSubject<Void> { get }
-  
-  
-  // UI
+}
+
+// MARK: Output
+// MARK: - UI
+protocol IntroViewModelOutputs {
   var showHome: Driver<String> { get }
-  
 }
 
 // MARK: - Class Implementation
-
-struct IntroViewModel: IntroViewModelType {
-  // MARK: Properties
-  // MARK: -> Event
+struct IntroViewModel: IntroViewModelType, IntroViewModelInputs, IntroViewModelOutputs {
   
+  var inputs: IntroViewModelInputs { return self }
+  var outputs: IntroViewModelOutputs { return self }
+  
+  // MARK: Input
+  // MARK: -> Event
   let viewWillAppear = PublishSubject<Void>()
   let didTapHomeButton = PublishSubject<Void>()
   
+  // MARK: Output
   // MARK: <- UI
   let showHome: Driver<String>
   
+  // MARK: Output
   // MARK: - Initialize
-  
   init() {
-    print("IntroView")
     showHome = didTapHomeButton
                 .map { "didHomeButton" }
                 .asDriver(onErrorJustReturn: "")
-    
   }
 }
+

@@ -45,6 +45,7 @@
 		3470C13C89C67D0B8D0DE0F9 /* Pods-rememori.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rememori.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rememori/Pods-rememori.debug.xcconfig"; sourceTree = "<group>"; };
 		952A4A412FE7B4C078D6D05C /* Pods-rememoriTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rememoriTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rememoriTests/Pods-rememoriTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9559FE9592EC5906D8420080 /* Pods-rememori.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rememori.release.xcconfig"; path = "Pods/Target Support Files/Pods-rememori/Pods-rememori.release.xcconfig"; sourceTree = "<group>"; };
+		BD2F63642008AC32004E1F1B /* demo.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; name = demo.xlsx; path = "../../../Excel/demo_swift_excel_xlsx_reader_writer/Demo Swift Excel Xlsx Reader Writer/demo.xlsx"; sourceTree = "<group>"; };
 		BD6BB64A2003025300795AAB /* rememori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rememori.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD6BB64D2003025300795AAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD6BB6542003025300795AAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,6 +114,7 @@
 		BD6BB64C2003025300795AAB /* rememori */ = {
 			isa = PBXGroup;
 			children = (
+				BD2F63642008AC32004E1F1B /* demo.xlsx */,
 				BD6BB64D2003025300795AAB /* AppDelegate.swift */,
 				BD6BB66D2003028A00795AAB /* Resource */,
 				BD6BB66E200302B600795AAB /* Source */,

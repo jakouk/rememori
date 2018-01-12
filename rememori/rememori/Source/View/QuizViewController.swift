@@ -29,7 +29,9 @@ final class QuizViewController: UIViewController, ViewType {
   }
   
   func setupEventBinding() {
-    
+    rx.viewWillAppear
+      .bind(to: viewModel.inputs.viewWillAppear)
+      .disposed(by: disposeBag)
   }
   
   func setupUIBinding() {

@@ -10,26 +10,43 @@ import RxCocoa
 import RxDataSources
 import RxSwift
 
-protocol HomeViewModelType: ViewModelType {
-  // Event
+//protocol HomeViewModelType: ViewModelType {
+//  // Event
+//  var viewWillAppear: PublishSubject<Void> { get }
+//
+//
+//  // UI
+//
+//}
+
+protocol HomeViewModelType {
+  var inputs: HomeViewModelInputs { get }
+  var outputs: HomeViewModelOutputs { get }
+}
+
+protocol HomeViewModelInputs {
   var viewWillAppear: PublishSubject<Void> { get }
-  
-  
-  // UI
+}
+
+protocol HomeViewModelOutputs {
   
 }
 
-struct HomeViewModel: HomeViewModelType {
-  // MARK: Properties
-  // MARK: -> Event
+struct HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutputs {
+
+  var inputs: HomeViewModelInputs { return self }
+  var outputs: HomeViewModelOutputs { return self }
   
+  // MARK: Input
+  // MARK: -> Event
   let viewWillAppear = PublishSubject<Void>()
   
+  // MARK: Output
   // MARK: <- UI
   
   
+  // MARK: Output
   // MARK: - Initialize
-  
   init() {
     
   }

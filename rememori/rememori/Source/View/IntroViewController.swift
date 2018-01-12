@@ -13,16 +13,12 @@ import SnapKit
 final class IntroViewController: UIViewController, ViewType {
   
   // MARK: UI Metrics
-  
   private struct UI {
-//    static let baseMargin = CGFloat(8)
     static let scrollViewFrame = UIScreen.main.bounds
     static let scrollViewContentSize = CGSize(width: UIScreen.main.bounds.size.width * 2, height: UIScreen.main.bounds.size.height )
-//    static let estimatedRowHeight = CGFloat(80)
   }
   
   // MARK: Properties
-  
   var viewModel: IntroViewModelType!
   var disposeBag: DisposeBag!
   private let scrollView = UIScrollView()
@@ -30,7 +26,6 @@ final class IntroViewController: UIViewController, ViewType {
   private let homeButton = UIButton()
   
   // MARK: Setup UI
-  
   func setupUI() {
     
     view.backgroundColor = UIColor.white
@@ -70,30 +65,24 @@ final class IntroViewController: UIViewController, ViewType {
       make.right.equalToSuperview().offset(-20)
       make.bottom.equalToSuperview().offset(-20)
     }
+    
   }
   
   // MARK: - -> Rx Event Binding
-  
   func setupEventBinding() {
-    
     rx.viewWillAppear
-      .bind(to: viewModel.viewWillAppear)
+      .bind(to: viewModel.inputs.viewWillAppear)
       .disposed(by: disposeBag)
     
-    // HomeButton
-    
     homeButton.rx.tap
-      .bind(to: viewModel.didTapHomeButton)
+      .bind(to: viewModel.inputs.didTapHomeButton)
       .disposed(by: disposeBag)
   }
   
   // MARK: - <- Rx UI Binding
-  
   func setupUIBinding() {
-    
-    viewModel.showHome
-      .drive(onNext: { urlString in
-        print(urlString)
+    viewModel.outputs.showHome
+      .drive(onNext: { void in
       AppDelegate.instance?.presentTabbarView()
     }).disposed(by: disposeBag)
     
