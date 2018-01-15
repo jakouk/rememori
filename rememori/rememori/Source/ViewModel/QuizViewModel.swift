@@ -23,17 +23,19 @@ protocol QuizViewModelOutputs {
   
 }
 
-// MARK: - Class Implementation
-
+// MARK: - Struct Implementation
 struct QuizViewModel: QuizViewModelType, QuizViewModelInputs, QuizViewModelOutputs  {
   
   var inputs: QuizViewModelInputs { return self }
   var outputs: QuizViewModelOutputs { return self }
   
+  
   // MARK: Input
   // MARK: -> Event
   
+  
   let viewWillAppear = PublishSubject<Void>()
+  
   
   // MARK: Output
   // MARK: <- UI

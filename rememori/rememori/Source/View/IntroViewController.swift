@@ -65,7 +65,6 @@ final class IntroViewController: UIViewController, ViewType {
       make.right.equalToSuperview().offset(-20)
       make.bottom.equalToSuperview().offset(-20)
     }
-    
   }
   
   // MARK: - -> Rx Event Binding
@@ -82,10 +81,9 @@ final class IntroViewController: UIViewController, ViewType {
   // MARK: - <- Rx UI Binding
   func setupUIBinding() {
     viewModel.outputs.showHome
-      .drive(onNext: { void in
+      .drive(onNext: {
       AppDelegate.instance?.presentTabbarView()
     }).disposed(by: disposeBag)
-    
   }
   
   // MARK: Action Handler

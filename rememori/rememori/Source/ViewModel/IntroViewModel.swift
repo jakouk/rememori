@@ -25,10 +25,10 @@ protocol IntroViewModelInputs {
 // MARK: Output
 // MARK: - UI
 protocol IntroViewModelOutputs {
-  var showHome: Driver<String> { get }
+  var showHome: Driver<Void> { get }
 }
 
-// MARK: - Class Implementation
+// MARK: - Struct Implementation
 struct IntroViewModel: IntroViewModelType, IntroViewModelInputs, IntroViewModelOutputs {
   
   var inputs: IntroViewModelInputs { return self }
@@ -39,16 +39,17 @@ struct IntroViewModel: IntroViewModelType, IntroViewModelInputs, IntroViewModelO
   let viewWillAppear = PublishSubject<Void>()
   let didTapHomeButton = PublishSubject<Void>()
   
+  
   // MARK: Output
   // MARK: <- UI
-  let showHome: Driver<String>
+  let showHome: Driver<Void>
+  
   
   // MARK: Output
   // MARK: - Initialize
   init() {
     showHome = didTapHomeButton
-                .map { "didHomeButton" }
-                .asDriver(onErrorJustReturn: "")
+                .asDriver(onErrorJustReturn: () )
   }
 }
 

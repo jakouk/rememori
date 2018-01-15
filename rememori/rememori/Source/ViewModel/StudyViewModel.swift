@@ -23,16 +23,17 @@ protocol StudyViewModelOutputs {
   
 }
 
-// MARK: - Class Implementation
-
+// MARK: - Struct Implementation
 struct StudyViewModel: StudyViewModelType, StudyViewModelInputs, StudyViewModelOutputs {
   
   var inputs: StudyViewModelInputs { return self }
   var outputs: StudyViewModelOutputs { return self }
   
+  
   // MARK: Input
   // MARK: -> Event
   let viewWillAppear = PublishSubject<Void>()
+  
   
   // MARK: Output
   // MARK: <- UI

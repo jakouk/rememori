@@ -28,9 +28,11 @@ struct SettingViewModel: SettingViewModelType, SettingViewModelInputs, SettingVi
   var inputs: SettingViewModelInputs { return self }
   var outputs: SettingViewModelOutputs { return self }
   
+  
   // MARK: Input
   // MARK: -> Event
   let viewWillAppear = PublishSubject<Void>()
+  
   
   // MARK: Output
   // MARK: <- UI
