@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0920"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "17FE6399A25D783828F051CD48B2F4F9"
+               BlueprintIdentifier = "398F4CA1AA246D8AA48DF938C531B11D"
                BuildableName = "Pods_rememori.framework"
                BlueprintName = "Pods-rememori"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "17FE6399A25D783828F051CD48B2F4F9"
+            BlueprintIdentifier = "398F4CA1AA246D8AA48DF938C531B11D"
             BuildableName = "Pods_rememori.framework"
             BlueprintName = "Pods-rememori"
             ReferencedContainer = "container:Pods.xcodeproj">

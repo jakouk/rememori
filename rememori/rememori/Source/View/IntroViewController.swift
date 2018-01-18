@@ -65,6 +65,11 @@ final class IntroViewController: UIViewController, ViewType {
       make.right.equalToSuperview().offset(-20)
       make.bottom.equalToSuperview().offset(-20)
     }
+    
+//    var documentPath = Bundle.main.path(forResource: "demo", ofType: "xlsx")
+//    var spreadsheet = BRAOfficeDocumentPackage.open(documentPath)
+//    var spreadsheet: BRAOfficeDocumentPackage
+    
   }
   
   // MARK: - -> Rx Event Binding
@@ -76,6 +81,7 @@ final class IntroViewController: UIViewController, ViewType {
     homeButton.rx.tap
       .bind(to: viewModel.inputs.didTapHomeButton)
       .disposed(by: disposeBag)
+    
   }
   
   // MARK: - <- Rx UI Binding

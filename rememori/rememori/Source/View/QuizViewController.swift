@@ -9,7 +9,6 @@
 import RxCocoa
 import RxSwift
 
-
 final class QuizViewController: UIViewController, ViewType {
 
   // MARK: UI Metrics

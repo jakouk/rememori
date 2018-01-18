@@ -10,38 +10,21 @@ import RxCocoa
 import RxDataSources
 import RxSwift
 
-protocol SettingViewModelType {
-  var inputs: SettingViewModelInputs { get }
-  var outputs: SettingViewModelOutputs { get }
-}
-
-protocol SettingViewModelInputs {
-  var viewWillAppear: PublishSubject<Void> { get }
-}
-
-protocol SettingViewModelOutputs {
+final class SettingViewModel: ViewModelType {
   
-}
-
-struct SettingViewModel: SettingViewModelType, SettingViewModelInputs, SettingViewModelOutputs {
-
-  var inputs: SettingViewModelInputs { return self }
-  var outputs: SettingViewModelOutputs { return self }
-  
-  
-  // MARK: Input
-  // MARK: -> Event
-  let viewWillAppear = PublishSubject<Void>()
-  
-  
-  // MARK: Output
-  // MARK: <- UI
-  
-  
-  // MARK: Output
-  // MARK: - Initialize
-  init() {
+  func transform(input: Input) -> Output {
+    let activityIndicator = ActivityIndicator()
+    let fetching = activityIndicator.asDriver()
     
+    return Output(fetching: fetching)
   }
-  
+}
+
+extension SettingViewModel {
+  struct Input {
+    let createPostTrigger: Driver<Void>
+  }
+  struct Output {
+    let fetching: Driver<Bool>
+  }
 }

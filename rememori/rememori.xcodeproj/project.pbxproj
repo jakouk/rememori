@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9697506059B9BD1C282717B9 /* Pods_rememoriTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A50A4616929CB1383B9D6F0 /* Pods_rememoriTests.framework */; };
+		BD47F1C6201064A50072E48A /* Observable+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD47F1C5201064A50072E48A /* Observable+Ext.swift */; };
+		BD47F1C820107E550072E48A /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD47F1C720107E550072E48A /* ActivityIndicator.swift */; };
+		BD47F1CA20108D1C0072E48A /* ViewTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD47F1C920108D1C0072E48A /* ViewTypes.swift */; };
 		BD6BB64E2003025300795AAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6BB64D2003025300795AAB /* AppDelegate.swift */; };
 		BD6BB6552003025300795AAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD6BB6542003025300795AAB /* Assets.xcassets */; };
 		BD6BB6582003025300795AAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD6BB6562003025300795AAB /* LaunchScreen.storyboard */; };
@@ -45,7 +48,9 @@
 		3470C13C89C67D0B8D0DE0F9 /* Pods-rememori.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rememori.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rememori/Pods-rememori.debug.xcconfig"; sourceTree = "<group>"; };
 		952A4A412FE7B4C078D6D05C /* Pods-rememoriTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rememoriTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rememoriTests/Pods-rememoriTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9559FE9592EC5906D8420080 /* Pods-rememori.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rememori.release.xcconfig"; path = "Pods/Target Support Files/Pods-rememori/Pods-rememori.release.xcconfig"; sourceTree = "<group>"; };
-		BD2F63642008AC32004E1F1B /* demo.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; name = demo.xlsx; path = "../../../Excel/demo_swift_excel_xlsx_reader_writer/Demo Swift Excel Xlsx Reader Writer/demo.xlsx"; sourceTree = "<group>"; };
+		BD47F1C5201064A50072E48A /* Observable+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Ext.swift"; sourceTree = "<group>"; };
+		BD47F1C720107E550072E48A /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		BD47F1C920108D1C0072E48A /* ViewTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTypes.swift; sourceTree = "<group>"; };
 		BD6BB64A2003025300795AAB /* rememori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rememori.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD6BB64D2003025300795AAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD6BB6542003025300795AAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,6 +65,7 @@
 		BD6BB6762003051600795AAB /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		BD6BB6792003101800795AAB /* Reactive+Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Base.swift"; sourceTree = "<group>"; };
 		BD6BB67C20034CB200795AAB /* UIView+SubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SubView.swift"; sourceTree = "<group>"; };
+		BD6EB324200C7A7800A767A5 /* demo.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = demo.xlsx; sourceTree = "<group>"; };
 		BD7C41002004AF34002C0F24 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		BD7C41022004AF4D002C0F24 /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
 		BD7C41042004B5A3002C0F24 /* StudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +74,7 @@
 		BD7C92B42005EACF00C8736C /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		BD7C92B62005EB0600C8736C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BD7C92B82005EB0F00C8736C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		BD94F898200F11F000965A56 /* rememori-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rememori-Bridging-Header.h"; sourceTree = "<group>"; };
 		F6E0A8DB729B75245651BE97 /* Pods-rememoriTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rememoriTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rememoriTests/Pods-rememoriTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,8 +121,8 @@
 		BD6BB64C2003025300795AAB /* rememori */ = {
 			isa = PBXGroup;
 			children = (
-				BD2F63642008AC32004E1F1B /* demo.xlsx */,
 				BD6BB64D2003025300795AAB /* AppDelegate.swift */,
+				BD94F898200F11F000965A56 /* rememori-Bridging-Header.h */,
 				BD6BB66D2003028A00795AAB /* Resource */,
 				BD6BB66E200302B600795AAB /* Source */,
 				BD6BB66F200302BB00795AAB /* Supporting Files */,
@@ -156,6 +163,7 @@
 		BD6BB66F200302BB00795AAB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BD6EB324200C7A7800A767A5 /* demo.xlsx */,
 				BD6BB6592003025300795AAB /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -166,6 +174,7 @@
 			children = (
 				BD6BB6742003050B00795AAB /* ViewType.swift */,
 				BD6BB6762003051600795AAB /* ViewModelType.swift */,
+				BD47F1C920108D1C0072E48A /* ViewTypes.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -175,6 +184,8 @@
 			children = (
 				BD6BB6792003101800795AAB /* Reactive+Base.swift */,
 				BD6BB67C20034CB200795AAB /* UIView+SubView.swift */,
+				BD47F1C5201064A50072E48A /* Observable+Ext.swift */,
+				BD47F1C720107E550072E48A /* ActivityIndicator.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -389,19 +400,27 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-rememori/Pods-rememori-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/XMLDictionary/XMLDictionary.framework",
+				"${BUILT_PRODUCTS_DIR}/XlsxReaderWriter/XlsxReaderWriter.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XMLDictionary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XlsxReaderWriter.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -448,6 +467,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD47F1C6201064A50072E48A /* Observable+Ext.swift in Sources */,
 				BD7C41052004B5A3002C0F24 /* StudyViewController.swift in Sources */,
 				BD6BB64E2003025300795AAB /* AppDelegate.swift in Sources */,
 				BD6BB673200304C900795AAB /* IntroViewModel.swift in Sources */,
@@ -463,6 +483,8 @@
 				BD6BB67A2003101800795AAB /* Reactive+Base.swift in Sources */,
 				BD7C92B92005EB0F00C8736C /* HomeViewModel.swift in Sources */,
 				BD7C92B32005EAC000C8736C /* SettingViewController.swift in Sources */,
+				BD47F1CA20108D1C0072E48A /* ViewTypes.swift in Sources */,
+				BD47F1C820107E550072E48A /* ActivityIndicator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,6 +571,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -598,6 +621,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -609,11 +633,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 22377YLS2X;
 				INFOPLIST_FILE = "$(SRCROOT)/rememori/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jakouk.rememori;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/rememori/rememori-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -625,11 +651,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 22377YLS2X;
 				INFOPLIST_FILE = "$(SRCROOT)/rememori/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jakouk.rememori;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/rememori/rememori-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

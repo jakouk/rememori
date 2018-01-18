@@ -32,8 +32,6 @@ struct QuizViewModel: QuizViewModelType, QuizViewModelInputs, QuizViewModelOutpu
   
   // MARK: Input
   // MARK: -> Event
-  
-  
   let viewWillAppear = PublishSubject<Void>()
   
   
