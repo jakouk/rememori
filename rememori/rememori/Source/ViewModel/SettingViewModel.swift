@@ -16,15 +16,31 @@ final class SettingViewModel: ViewModelType {
     let activityIndicator = ActivityIndicator()
     let fetching = activityIndicator.asDriver()
     
-    return Output(fetching: fetching)
+    let buttonChangeColor = input.selectButton.do(onNext: { button in
+      
+      print("buttonTap")
+      
+      if button.backgroundColor == .red {
+        print("red")
+        button.backgroundColor = .purple
+      }
+      else {
+        print("purple")
+        button.backgroundColor = .red
+      }
+    })
+    
+    return Output(fetching: fetching, buttonChangeColor: buttonChangeColor)
   }
 }
 
 extension SettingViewModel {
   struct Input {
-    let createPostTrigger: Driver<Void>
+    let selectButton: Driver<UIButton>
   }
   struct Output {
     let fetching: Driver<Bool>
+    let buttonChangeColor: Driver<UIButton>
+    
   }
 }

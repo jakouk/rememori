@@ -81,7 +81,6 @@ final class IntroViewController: UIViewController, ViewType {
     homeButton.rx.tap
       .bind(to: viewModel.inputs.didTapHomeButton)
       .disposed(by: disposeBag)
-    
   }
   
   // MARK: - <- Rx UI Binding

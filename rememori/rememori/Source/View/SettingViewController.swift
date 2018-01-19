@@ -20,7 +20,6 @@ final class SettingViewController: UIViewController, ViewTypes {
   override func viewDidLoad() {
     super.viewDidLoad()
     configureTableView()
-    bindViewModel()
   }
   
   func setupUI() {
@@ -43,20 +42,27 @@ final class SettingViewController: UIViewController, ViewTypes {
   
   func bindViewModel() {
     assert(viewModel != nil)
-//    let viewWillAppear = rx.sentMessage(#selector(UIViewController.viewWillAppear(_:)))
-//      .mapToVoid()
-//      .asDriverOnErrorJustComplete()
-//
-//    let pull = tableView.refreshControl!.rx
-//      .controlEvent(.valueChanged)
-//      .asDriver()
     
-    let input = SettingViewModel.Input(createPostTrigger: createPostButton.rx.tap.asDriver())
+    let driver = createPostButton.rx.tap
+      .debounce(1, scheduler: MainScheduler.instance)
+      .map{ [weak self] _ in
+        guard let `self` = self else {
+          print("not createPostButton")
+          return UIButton()
+        }
+        return self.createPostButton
+      }
+      .asDriver(onErrorJustReturn: UIButton()).debug()
+    
+    
+//    let drive = createPostButton.rx.tap.map { button }.drive(onNext: {$0.isHidden}).disposed
+    
+    let input = SettingViewModel.Input(selectButton: driver)
     let output = viewModel.transform(input: input)
     
-//    output.fetching
-//      .drive(tableView.refreshControl!.rx.isRefreshing)
-//      .disposed(by: disposeBag)
+    output.buttonChangeColor
+      .drive()
+      .disposed(by: disposeBag)
     
 //    output.fetching
 //      .drive(tableView.refreshControl!.rx.isRefreshing)
