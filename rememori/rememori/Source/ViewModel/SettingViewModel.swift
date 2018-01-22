@@ -17,15 +17,9 @@ final class SettingViewModel: ViewModelType {
     let fetching = activityIndicator.asDriver()
     
     let buttonChangeColor = input.selectButton.do(onNext: { button in
-      
-      print("buttonTap")
-      
       if button.backgroundColor == .red {
-        print("red")
         button.backgroundColor = .purple
-      }
-      else {
-        print("purple")
+      } else {
         button.backgroundColor = .red
       }
     })

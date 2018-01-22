@@ -26,12 +26,15 @@ final class SettingViewController: UIViewController, ViewTypes {
     view.backgroundColor = .green
     view.addSubview(createPostButton)
     
+    createPostButton.backgroundColor = .red
+  }
+  
+  func constraintUI() {
     createPostButton.snp.makeConstraints { make in
       make.top.left.equalTo(0).offset(30)
       make.width.equalTo(100)
       make.height.equalTo(30)
     }
-    createPostButton.backgroundColor = .red
   }
   
   func configureTableView() {
@@ -44,18 +47,13 @@ final class SettingViewController: UIViewController, ViewTypes {
     assert(viewModel != nil)
     
     let driver = createPostButton.rx.tap
-      .debounce(1, scheduler: MainScheduler.instance)
       .map{ [weak self] _ in
         guard let `self` = self else {
-          print("not createPostButton")
           return UIButton()
         }
         return self.createPostButton
       }
-      .asDriver(onErrorJustReturn: UIButton()).debug()
-    
-    
-//    let drive = createPostButton.rx.tap.map { button }.drive(onNext: {$0.isHidden}).disposed
+      .asDriver(onErrorJustReturn: UIButton())
     
     let input = SettingViewModel.Input(selectButton: driver)
     let output = viewModel.transform(input: input)
