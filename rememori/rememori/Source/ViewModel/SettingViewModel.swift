@@ -29,12 +29,21 @@ final class SettingViewModel: ViewModelType {
 }
 
 extension SettingViewModel {
+  
+//  func input() {
+//    let selectButton: Driver<UIButton>
+//  }
+//
+//  func output() {
+//    let fetching: Driver<Bool>
+//    let buttonChangeColor: Driver<UIButton>
+//  }
+  
   struct Input {
     let selectButton: Driver<UIButton>
   }
   struct Output {
     let fetching: Driver<Bool>
     let buttonChangeColor: Driver<UIButton>
-    
   }
 }

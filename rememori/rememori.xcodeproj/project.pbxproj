@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9697506059B9BD1C282717B9 /* Pods_rememoriTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A50A4616929CB1383B9D6F0 /* Pods_rememoriTests.framework */; };
+		BD08EEF920171F5700126257 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD08EEF820171F5700126257 /* MenuViewController.swift */; };
+		BD08EEFB20171F6A00126257 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD08EEFA20171F6A00126257 /* MenuViewModel.swift */; };
 		BD47F1C6201064A50072E48A /* Observable+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD47F1C5201064A50072E48A /* Observable+Ext.swift */; };
 		BD47F1C820107E550072E48A /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD47F1C720107E550072E48A /* ActivityIndicator.swift */; };
 		BD47F1CA20108D1C0072E48A /* ViewTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD47F1C920108D1C0072E48A /* ViewTypes.swift */; };
@@ -48,6 +50,8 @@
 		3470C13C89C67D0B8D0DE0F9 /* Pods-rememori.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rememori.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rememori/Pods-rememori.debug.xcconfig"; sourceTree = "<group>"; };
 		952A4A412FE7B4C078D6D05C /* Pods-rememoriTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rememoriTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rememoriTests/Pods-rememoriTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9559FE9592EC5906D8420080 /* Pods-rememori.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rememori.release.xcconfig"; path = "Pods/Target Support Files/Pods-rememori/Pods-rememori.release.xcconfig"; sourceTree = "<group>"; };
+		BD08EEF820171F5700126257 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		BD08EEFA20171F6A00126257 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		BD47F1C5201064A50072E48A /* Observable+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Ext.swift"; sourceTree = "<group>"; };
 		BD47F1C720107E550072E48A /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		BD47F1C920108D1C0072E48A /* ViewTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTypes.swift; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 				BD7C41042004B5A3002C0F24 /* StudyViewController.swift */,
 				BD7C92B22005EAC000C8736C /* SettingViewController.swift */,
 				BD7C92B62005EB0600C8736C /* HomeViewController.swift */,
+				BD08EEF820171F5700126257 /* MenuViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 				BD7C41062004B5B2002C0F24 /* StudyViewModel.swift */,
 				BD7C92B42005EACF00C8736C /* SettingViewModel.swift */,
 				BD7C92B82005EB0F00C8736C /* HomeViewModel.swift */,
+				BD08EEFA20171F6A00126257 /* MenuViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -470,6 +476,7 @@
 				BD47F1C6201064A50072E48A /* Observable+Ext.swift in Sources */,
 				BD7C41052004B5A3002C0F24 /* StudyViewController.swift in Sources */,
 				BD6BB64E2003025300795AAB /* AppDelegate.swift in Sources */,
+				BD08EEFB20171F6A00126257 /* MenuViewModel.swift in Sources */,
 				BD6BB673200304C900795AAB /* IntroViewModel.swift in Sources */,
 				BD7C92B52005EACF00C8736C /* SettingViewModel.swift in Sources */,
 				BD6BB6752003050B00795AAB /* ViewType.swift in Sources */,
@@ -481,6 +488,7 @@
 				BD6BB671200304B700795AAB /* IntroViewController.swift in Sources */,
 				BD6BB67D20034CB200795AAB /* UIView+SubView.swift in Sources */,
 				BD6BB67A2003101800795AAB /* Reactive+Base.swift in Sources */,
+				BD08EEF920171F5700126257 /* MenuViewController.swift in Sources */,
 				BD7C92B92005EB0F00C8736C /* HomeViewModel.swift in Sources */,
 				BD7C92B32005EAC000C8736C /* SettingViewController.swift in Sources */,
 				BD47F1CA20108D1C0072E48A /* ViewTypes.swift in Sources */,

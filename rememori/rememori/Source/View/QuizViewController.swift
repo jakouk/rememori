@@ -11,6 +11,7 @@ import RxSwift
 
 final class QuizViewController: UIViewController, ViewType {
 
+
   // MARK: UI Metrics
   
   private struct UI {
@@ -27,9 +28,13 @@ final class QuizViewController: UIViewController, ViewType {
     view.backgroundColor = UIColor.white
   }
   
+  func constraintUI() {
+    
+  }
+  
   func setupEventBinding() {
     rx.viewWillAppear
-      .bind(to: viewModel.inputs.viewWillAppear)
+      .bind(to: viewModel.viewWillAppear)
       .disposed(by: disposeBag)
   }
   

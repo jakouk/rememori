@@ -28,6 +28,10 @@ final class StudyViewController: UIViewController, ViewType {
     view.backgroundColor = UIColor.yellow
   }
   
+  func constraintUI() {
+    
+  }
+  
   func setupEventBinding() {
     
   }

@@ -28,6 +28,10 @@ final class HomeViewController: UIViewController, ViewType {
     view.backgroundColor = UIColor.blue
   }
   
+  func constraintUI() {
+    
+  }
+  
   func setupEventBinding() {
     
   }

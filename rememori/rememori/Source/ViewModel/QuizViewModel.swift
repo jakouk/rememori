@@ -11,24 +11,11 @@ import RxDataSources
 import RxSwift
 
 protocol QuizViewModelType {
-  var inputs: QuizViewModelInputs { get }
-  var outputs: QuizViewModelOutputs { get }
-}
-
-protocol QuizViewModelInputs {
   var viewWillAppear: PublishSubject<Void> { get }
 }
 
-protocol QuizViewModelOutputs {
-  
-}
-
 // MARK: - Struct Implementation
-struct QuizViewModel: QuizViewModelType, QuizViewModelInputs, QuizViewModelOutputs  {
-  
-  var inputs: QuizViewModelInputs { return self }
-  var outputs: QuizViewModelOutputs { return self }
-  
+struct QuizViewModel: QuizViewModelType {
   
   // MARK: Input
   // MARK: -> Event

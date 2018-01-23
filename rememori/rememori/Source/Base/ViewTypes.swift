@@ -18,9 +18,6 @@ protocol ViewTypes: class {
   func setupUI()
   func constraintUI()
   func bindViewModel()
-//  func setupUI()
-//  func setupEventBinding()
-//  func setupUIBinding()
 }
 
 extension ViewTypes where Self: UIViewController {
@@ -32,9 +29,6 @@ extension ViewTypes where Self: UIViewController {
     self.setupUI()
     self.constraintUI()
     self.bindViewModel()
-//    self.setupUI()
-//    self.setupEventBinding()
-//    self.setupUIBinding()
     return self
   }
 }

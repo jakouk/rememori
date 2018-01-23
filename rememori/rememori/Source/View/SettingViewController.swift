@@ -44,6 +44,8 @@ final class SettingViewController: UIViewController, ViewTypes {
   }
   
   func bindViewModel() {
+    
+    // viewModel이 nil이면 오류 
     assert(viewModel != nil)
     
     let driver = createPostButton.rx.tap
