@@ -20,7 +20,6 @@ protocol HomeViewModelInputs {
 }
 
 protocol HomeViewModelOutputs {
-  
 }
 
 struct HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutputs {
