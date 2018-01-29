@@ -31,6 +31,7 @@
 		BD7C92B52005EACF00C8736C /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7C92B42005EACF00C8736C /* SettingViewModel.swift */; };
 		BD7C92B72005EB0600C8736C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7C92B62005EB0600C8736C /* HomeViewController.swift */; };
 		BD7C92B92005EB0F00C8736C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7C92B82005EB0F00C8736C /* HomeViewModel.swift */; };
+		BD925639201F16C1002923BB /* ViewModelTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD925638201F16C1002923BB /* ViewModelTypes.swift */; };
 		DAB343745586D85487B64F78 /* Pods_rememori.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE2EC9F5E62D0A1161B7E5A /* Pods_rememori.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		BD7C92B42005EACF00C8736C /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		BD7C92B62005EB0600C8736C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BD7C92B82005EB0F00C8736C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		BD925638201F16C1002923BB /* ViewModelTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTypes.swift; sourceTree = "<group>"; };
 		BD94F898200F11F000965A56 /* rememori-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rememori-Bridging-Header.h"; sourceTree = "<group>"; };
 		F6E0A8DB729B75245651BE97 /* Pods-rememoriTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rememoriTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rememoriTests/Pods-rememoriTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,6 +181,7 @@
 				BD6BB6742003050B00795AAB /* ViewType.swift */,
 				BD6BB6762003051600795AAB /* ViewModelType.swift */,
 				BD47F1C920108D1C0072E48A /* ViewTypes.swift */,
+				BD925638201F16C1002923BB /* ViewModelTypes.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				BD7C41012004AF34002C0F24 /* QuizViewController.swift in Sources */,
 				BD7C41072004B5B2002C0F24 /* StudyViewModel.swift in Sources */,
 				BD6BB6772003051600795AAB /* ViewModelType.swift in Sources */,
+				BD925639201F16C1002923BB /* ViewModelTypes.swift in Sources */,
 				BD6BB671200304B700795AAB /* IntroViewController.swift in Sources */,
 				BD6BB67D20034CB200795AAB /* UIView+SubView.swift in Sources */,
 				BD6BB67A2003101800795AAB /* Reactive+Base.swift in Sources */,

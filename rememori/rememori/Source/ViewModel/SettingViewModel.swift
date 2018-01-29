@@ -10,7 +10,7 @@ import RxCocoa
 import RxDataSources
 import RxSwift
 
-final class SettingViewModel: ViewModelType {
+final class SettingViewModel: ViewModelTypes {
   
   func transform(input: Input) -> Output {
     let activityIndicator = ActivityIndicator()

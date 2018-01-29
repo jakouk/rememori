@@ -10,25 +10,12 @@ import RxCocoa
 import RxDataSources
 import RxSwift
 
-protocol StudyViewModelType {
-  var inputs: StudyViewModelInputs { get }
-  var outputs: StudyViewModelOutputs { get }
-}
-
-protocol StudyViewModelInputs {
+protocol StudyViewModelType: ViewModelType {
   var viewWillAppear: PublishSubject<Void> { get }
 }
 
-protocol StudyViewModelOutputs {
-  
-}
-
 // MARK: - Struct Implementation
-struct StudyViewModel: StudyViewModelType, StudyViewModelInputs, StudyViewModelOutputs {
-  
-  var inputs: StudyViewModelInputs { return self }
-  var outputs: StudyViewModelOutputs { return self }
-  
+struct StudyViewModel: StudyViewModelType {
   
   // MARK: Input
   // MARK: -> Event

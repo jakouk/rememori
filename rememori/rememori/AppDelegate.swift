@@ -39,15 +39,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let studyViewModel = StudyViewModel()
     let studyView = StudyViewController.create(with: studyViewModel)
-    studyView.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
+    studyView.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 1)
     
     let settingViewModel = SettingViewModel()
     let settingView = SettingViewController.create(with: settingViewModel)
-    settingView.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 2)
+    settingView.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 2)
     
     let quizViewModel = QuizViewModel()
     let quizView = QuizViewController.create(with: quizViewModel)
-    quizView.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 3)
+    quizView.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 3)
     
     let tabBarController = UITabBarController()
     

@@ -10,7 +10,7 @@ import RxCocoa
 import RxDataSources
 import RxSwift
 
-protocol QuizViewModelType {
+protocol QuizViewModelType: ViewModelType {
   var viewWillAppear: PublishSubject<Void> { get }
 }
 
