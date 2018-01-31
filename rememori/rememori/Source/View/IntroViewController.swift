@@ -30,7 +30,7 @@ final class IntroViewController: UIViewController, ViewType {
     
     view.backgroundColor = UIColor.white
     
-    view.addSubviews([scrollView])
+    view.addSubview(scrollView)
     scrollView.contentSize = UI.scrollViewContentSize
     scrollView.isPagingEnabled = true
     

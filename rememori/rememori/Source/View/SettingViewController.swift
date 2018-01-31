@@ -12,9 +12,16 @@ import RxSwift
 
 final class SettingViewController: UIViewController, ViewTypes {
 
+  private struct UI {
+    static let tableViewFrame = UIScreen.main.bounds
+    static let tableViewSectionHeaderHeight = CGFloat(40)
+    static let tableViewRowHeight = CGFloat(40)
+    static let tableViewFooterHiehgt = CGFloat(40)
+  }
+  
   var disposeBag: DisposeBag!
   var viewModel: SettingViewModel!
-  var tableView = UITableView()
+  var tableView = UITableView(frame: UI.tableViewFrame, style: .grouped)
   var createPostButton = UIButton()
   
   override func viewDidLoad() {
@@ -24,7 +31,14 @@ final class SettingViewController: UIViewController, ViewTypes {
   
   func setupUI() {
     view.backgroundColor = .green
-    view.addSubview(createPostButton)
+    //view.addSubview(createPostButton)
+    
+    tableView.separatorColor = tableView.backgroundColor
+    tableView.rowHeight = UI.tableViewRowHeight
+    tableView.sectionHeaderHeight = UI.tableViewSectionHeaderHeight
+    tableView.sectionFooterHeight = UI.tableViewFooterHiehgt
+    tableView.allowsMultipleSelection = true
+    tableView.register(cell: SettingTableViewCell.self)
     
     createPostButton.backgroundColor = .red
   }
