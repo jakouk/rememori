@@ -10,40 +10,62 @@ import RxCocoa
 import RxDataSources
 import RxSwift
 
-final class SettingViewModel: ViewModelTypes {
-  
-  func transform(input: Input) -> Output {
-    let activityIndicator = ActivityIndicator()
-    let fetching = activityIndicator.asDriver()
-    
-    let buttonChangeColor = input.selectButton.do(onNext: { button in
-      if button.backgroundColor == .red {
-        button.backgroundColor = .purple
-      } else {
-        button.backgroundColor = .red
-      }
-    })
-    
-    return Output(fetching: fetching, buttonChangeColor: buttonChangeColor)
-  }
-}
+typealias SettingSection = SectionModel<String, String>
 
-extension SettingViewModel {
+protocol SettingViewModelType: ViewModelType {
+  // Event
+  var willSelectTableViewRow: PublishSubject<(_: IndexPath, selectedIndexPaths: [IndexPath]?)> { get }
+  var didSelectTableViewRow: PublishSubject<IndexPath> { get }
+  var configureCell: PublishSubject<IndexPath> { get }
   
-//  func input() {
-//    let selectButton: Driver<UIButton>
-//  }
-//
-//  func output() {
-//    let fetching: Driver<Bool>
-//    let buttonChangeColor: Driver<UIButton>
-//  }
+  // UI
+  var rowSelection: Driver<(selected: Bool, indexPath: IndexPath, animated: Bool)> { get }
+  var sectionedItems: Driver<[SettingSection]> { get }
+  var willSelectTableViewRowIndexPath: BehaviorRelay<IndexPath?> { get }
+}
   
-  struct Input {
-    let selectButton: Driver<UIButton>
+struct SettingViewModel: SettingViewModelType {
+  let disposeBag = DisposeBag()
+  
+  // MARK: -> Event
+  
+  let willSelectTableViewRow = PublishSubject<(_: IndexPath, selectedIndexPaths: [IndexPath]?)>()
+  let didSelectTableViewRow = PublishSubject<IndexPath>()
+  let configureCell = PublishSubject<IndexPath>()
+  
+  // MARK: <- UI
+  
+  let rowSelection: Driver<(selected: Bool, indexPath: IndexPath, animated: Bool)>
+  let sectionedItems: Driver<[SettingSection]>
+  let willSelectTableViewRowIndexPath: BehaviorRelay<IndexPath?>
+  
+  // MARK: - Initialize
+  
+  init() {
+    
+    let settingSections = [ SettingSection(model: "총 외울 기간 ", items: ["1달","2달", "3달"]),
+                            SettingSection(model: "초기화", items: ["초기화"]),
+                            SettingSection(model: "로그아웃 ", items: ["로그아웃"]) ]
+    
+      sectionedItems = Driver.just(settingSections)
+    
+    // TableView Selection
+    
+    let selectRowEvent = PublishSubject<(selected: Bool, indexPath: IndexPath, animated: Bool)>()
+    rowSelection = selectRowEvent
+      .asDriver(onErrorJustReturn: (selected: false, indexPath: IndexPath(), animated: false))
+    
+    let _willSelectTableViewRowIndexPath = BehaviorRelay<IndexPath?>(value: nil)
+    willSelectTableViewRowIndexPath = _willSelectTableViewRowIndexPath
+    
+    willSelectTableViewRow
+      .subscribe(onNext: { indexPath, selectedIndexPaths in
+        guard let selectedIndexPaths = selectedIndexPaths else { return }
+        selectedIndexPaths
+          .filter { $0.section == indexPath.section }
+          .forEach { selectRowEvent.onNext((selected: false, indexPath: $0, animated: false)) }
+        _willSelectTableViewRowIndexPath.accept(indexPath)
+      }).disposed(by: disposeBag)
   }
-  struct Output {
-    let fetching: Driver<Bool>
-    let buttonChangeColor: Driver<UIButton>
-  }
+  
 }

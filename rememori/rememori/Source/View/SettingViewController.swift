@@ -10,7 +10,7 @@ import RxCocoa
 import RxDataSources
 import RxSwift
 
-final class SettingViewController: UIViewController, ViewTypes {
+final class SettingViewController: UIViewController, ViewType {
 
   private struct UI {
     static let tableViewFrame = UIScreen.main.bounds
@@ -20,9 +20,8 @@ final class SettingViewController: UIViewController, ViewTypes {
   }
   
   var disposeBag: DisposeBag!
-  var viewModel: SettingViewModel!
-  var tableView = UITableView(frame: UI.tableViewFrame, style: .grouped)
-  var createPostButton = UIButton()
+  var viewModel: SettingViewModelType!
+  var tableView = UITableView(frame: CGRect.zero, style: .grouped)
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -30,8 +29,9 @@ final class SettingViewController: UIViewController, ViewTypes {
   }
   
   func setupUI() {
+    view.addSubview(tableView)
+    
     view.backgroundColor = .green
-    //view.addSubview(createPostButton)
     
     tableView.separatorColor = tableView.backgroundColor
     tableView.rowHeight = UI.tableViewRowHeight
@@ -39,15 +39,13 @@ final class SettingViewController: UIViewController, ViewTypes {
     tableView.sectionFooterHeight = UI.tableViewFooterHiehgt
     tableView.allowsMultipleSelection = true
     tableView.register(cell: SettingTableViewCell.self)
-    
-    createPostButton.backgroundColor = .red
   }
   
   func constraintUI() {
-    createPostButton.snp.makeConstraints { make in
-      make.top.left.equalTo(0).offset(30)
-      make.width.equalTo(100)
-      make.height.equalTo(30)
+    tableView.snp.makeConstraints { make in
+      make.left.right.equalToSuperview()
+      make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+      make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
     }
   }
   
@@ -57,30 +55,64 @@ final class SettingViewController: UIViewController, ViewTypes {
     tableView.rowHeight = UITableViewAutomaticDimension
   }
   
-  func bindViewModel() {
-    
-    // viewModel이 nil이면 오류 
-    assert(viewModel != nil)
-    
-    let driver = createPostButton.rx.tap
-      .map{ [weak self] _ in
-        guard let `self` = self else {
-          return UIButton()
-        }
-        return self.createPostButton
-      }
-      .asDriver(onErrorJustReturn: UIButton())
-    
-    let input = SettingViewModel.Input(selectButton: driver)
-    let output = viewModel.transform(input: input)
-    
-    output.buttonChangeColor
-      .drive()
+  func setupEventBinding() {
+    tableView.rx.itemSelected
+      .bind(to: viewModel.didSelectTableViewRow)
       .disposed(by: disposeBag)
     
-//    output.fetching
-//      .drive(tableView.refreshControl!.rx.isRefreshing)
-//      .disposed(by: disposeBag)
+    tableView.rx.willDisplayHeaderViewForSection
+      .subscribe(onNext: { view, _ in
+        guard let headerView = view as? UITableViewHeaderFooterView else { return }
+        headerView.textLabel?.textColor = .darkGray
+      }).disposed(by: disposeBag)
+    
+    tableView.rx.setDelegate(self)
+      .disposed(by: disposeBag)
   }
   
+  func setupUIBinding() {
+    let dataSource = RxTableViewSectionedReloadDataSource<SettingSection>(
+      configureCell: { [weak self] (_, tableView, indexPath, item) in
+        let cell = tableView.dequeue(SettingTableViewCell.self)!
+        self?.viewModel.configureCell.onNext(indexPath)
+        cell.setTitleText(item.capitalized)
+        return cell
+      }, titleForHeaderInSection: { (dataSource, index) ->  String? in
+        dataSource.sectionModels[index].model
+    })
+    
+    viewModel.sectionedItems.asDriver()
+      .drive(tableView.rx.items(dataSource: dataSource))
+      .disposed(by: disposeBag)
+    
+    viewModel.rowSelection
+      .drive(onNext: { [weak self] (selected, indexPath, animated) in
+        self?.tableViewRowSelection(willSelect: selected, indexPath: indexPath, animated: animated)
+      }).disposed(by: disposeBag)
+  }
+  
+  // MARK: Acion Handler
+  
+  private func tableViewRowSelection(willSelect: Bool, indexPath: IndexPath, animated: Bool) {
+    if willSelect {
+      tableView.selectRow(at: indexPath, animated: animated, scrollPosition: .none)
+    } else {
+      tableView.deselectRow(at: indexPath, animated: animated)
+    }
+  }
+  
+}
+
+// MARK: - TableViewDelegate
+
+extension SettingViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+    viewModel.willSelectTableViewRow
+      .onNext((indexPath, selectedIndexPaths: tableView.indexPathsForSelectedRows))
+    return viewModel.willSelectTableViewRowIndexPath.value
+  }
+  
+  func tableView(_ tableView: UITableView, willDeselectRowAt indexPath: IndexPath) -> IndexPath? {
+    return nil
+  }
 }
