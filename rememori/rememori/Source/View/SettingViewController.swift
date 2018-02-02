@@ -50,7 +50,7 @@ final class SettingViewController: UIViewController, ViewType {
   }
   
   func configureTableView() {
-    tableView.refreshControl = UIRefreshControl()
+    //tableView.refreshControl = UIRefreshControl()
     tableView.estimatedRowHeight = 64
     tableView.rowHeight = UITableViewAutomaticDimension
   }

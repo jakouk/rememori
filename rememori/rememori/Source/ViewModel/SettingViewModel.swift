@@ -46,7 +46,6 @@ struct SettingViewModel: SettingViewModelType {
     let settingSections = [ SettingSection(model: "총 외울 기간 ", items: ["1달","2달", "3달"]),
                             SettingSection(model: "초기화", items: ["초기화"]),
                             SettingSection(model: "로그아웃 ", items: ["로그아웃"]) ]
-    
       sectionedItems = Driver.just(settingSections)
     
     // TableView Selection
@@ -66,6 +65,17 @@ struct SettingViewModel: SettingViewModelType {
           .forEach { selectRowEvent.onNext((selected: false, indexPath: $0, animated: false)) }
         _willSelectTableViewRowIndexPath.accept(indexPath)
       }).disposed(by: disposeBag)
+    
+    let settings = ["2달"]
+    
+    configureCell
+      .subscribe(onNext: { indexPath in
+        let item = settingSections[indexPath.section].items[indexPath.row]
+        if settings.contains(item) {
+          selectRowEvent.onNext((selected: true, indexPath: indexPath, animated: true))
+        }
+      }).disposed(by: disposeBag)
+    
   }
   
 }
