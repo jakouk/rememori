@@ -83,8 +83,8 @@
 		BD7C92B42005EACF00C8736C /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		BD7C92B62005EB0600C8736C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BD7C92B82005EB0F00C8736C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		BD8A26B42057A0FD00409C7B /* rememori-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rememori-Bridging-Header.h"; sourceTree = "<group>"; };
 		BD925638201F16C1002923BB /* ViewModelTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTypes.swift; sourceTree = "<group>"; };
-		BD94F898200F11F000965A56 /* rememori-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rememori-Bridging-Header.h"; sourceTree = "<group>"; };
 		F6E0A8DB729B75245651BE97 /* Pods-rememoriTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rememoriTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rememoriTests/Pods-rememoriTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,7 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				BD6BB64D2003025300795AAB /* AppDelegate.swift */,
-				BD94F898200F11F000965A56 /* rememori-Bridging-Header.h */,
+				BD8A26B42057A0FD00409C7B /* rememori-Bridging-Header.h */,
 				BD6BB66D2003028A00795AAB /* Resource */,
 				BD6BB66E200302B600795AAB /* Source */,
 				BD6BB66F200302BB00795AAB /* Supporting Files */,
@@ -659,7 +659,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jakouk.rememori;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/rememori/rememori-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -677,7 +677,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jakouk.rememori;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/rememori/rememori-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
