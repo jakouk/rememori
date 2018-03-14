@@ -33,6 +33,7 @@
 		BD7C92B52005EACF00C8736C /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7C92B42005EACF00C8736C /* SettingViewModel.swift */; };
 		BD7C92B72005EB0600C8736C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7C92B62005EB0600C8736C /* HomeViewController.swift */; };
 		BD7C92B92005EB0F00C8736C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7C92B82005EB0F00C8736C /* HomeViewModel.swift */; };
+		BD9230B3205917EA00380B2B /* demo.csv in Resources */ = {isa = PBXBuildFile; fileRef = BD9230B2205917EA00380B2B /* demo.csv */; };
 		BD925639201F16C1002923BB /* ViewModelTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD925638201F16C1002923BB /* ViewModelTypes.swift */; };
 		DAB343745586D85487B64F78 /* Pods_rememori.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE2EC9F5E62D0A1161B7E5A /* Pods_rememori.framework */; };
 /* End PBXBuildFile section */
@@ -72,7 +73,6 @@
 		BD6BB6762003051600795AAB /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		BD6BB6792003101800795AAB /* Reactive+Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Base.swift"; sourceTree = "<group>"; };
 		BD6BB67C20034CB200795AAB /* UIView+SubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SubView.swift"; sourceTree = "<group>"; };
-		BD6EB324200C7A7800A767A5 /* demo.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = demo.xlsx; sourceTree = "<group>"; };
 		BD76F2502021B19F00C7E0B0 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		BD76F2522021B55F00C7E0B0 /* Cell+TableViewCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell+TableViewCellType.swift"; sourceTree = "<group>"; };
 		BD7C41002004AF34002C0F24 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
@@ -83,7 +83,7 @@
 		BD7C92B42005EACF00C8736C /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		BD7C92B62005EB0600C8736C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BD7C92B82005EB0F00C8736C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		BD8A26B42057A0FD00409C7B /* rememori-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rememori-Bridging-Header.h"; sourceTree = "<group>"; };
+		BD9230B2205917EA00380B2B /* demo.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = demo.csv; path = ../../../../demo.csv; sourceTree = "<group>"; };
 		BD925638201F16C1002923BB /* ViewModelTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTypes.swift; sourceTree = "<group>"; };
 		F6E0A8DB729B75245651BE97 /* Pods-rememoriTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rememoriTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rememoriTests/Pods-rememoriTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,7 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				BD6BB64D2003025300795AAB /* AppDelegate.swift */,
-				BD8A26B42057A0FD00409C7B /* rememori-Bridging-Header.h */,
 				BD6BB66D2003028A00795AAB /* Resource */,
 				BD6BB66E200302B600795AAB /* Source */,
 				BD6BB66F200302BB00795AAB /* Supporting Files */,
@@ -173,8 +172,8 @@
 		BD6BB66F200302BB00795AAB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BD6EB324200C7A7800A767A5 /* demo.xlsx */,
 				BD6BB6592003025300795AAB /* Info.plist */,
+				BD9230B2205917EA00380B2B /* demo.csv */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -347,6 +346,7 @@
 			files = (
 				BD6BB6582003025300795AAB /* LaunchScreen.storyboard in Resources */,
 				BD6BB6552003025300795AAB /* Assets.xcassets in Resources */,
+				BD9230B3205917EA00380B2B /* demo.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,27 +415,23 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-rememori/Pods-rememori-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CSV.swift/CSV.framework",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/XMLDictionary/XMLDictionary.framework",
-				"${BUILT_PRODUCTS_DIR}/XlsxReaderWriter/XlsxReaderWriter.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CSV.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XMLDictionary.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XlsxReaderWriter.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -655,6 +651,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 22377YLS2X;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/rememori/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jakouk.rememori;
@@ -673,6 +670,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 22377YLS2X;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/rememori/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jakouk.rememori;

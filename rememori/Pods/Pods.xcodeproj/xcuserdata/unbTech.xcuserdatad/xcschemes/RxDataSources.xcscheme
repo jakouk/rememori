@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'D56753955750FCEEE0A24F3FE4AB2321'
-               BlueprintName = 'RxDataSources'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'RxDataSources.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6DBBCEBF2C5806E3DB28CC710A5534BB"
+               BlueprintName = "RxDataSources"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "RxDataSources.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

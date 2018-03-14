@@ -22,6 +22,7 @@ struct StudyViewModel: StudyViewModelType {
   let viewWillAppear = PublishSubject<Void>()
   
   
+  
   // MARK: Output
   // MARK: <- UI
   

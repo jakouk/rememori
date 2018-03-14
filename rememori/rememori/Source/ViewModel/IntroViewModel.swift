@@ -9,6 +9,8 @@
 import RxCocoa
 import RxSwift
 
+import CSV
+
 protocol IntroViewModelType {
   var inputs: IntroViewModelInputs { get }
   var outputs: IntroViewModelOutputs { get }
@@ -49,6 +51,14 @@ struct IntroViewModel: IntroViewModelType, IntroViewModelInputs, IntroViewModelO
   init() {
     showHome = didTapHomeButton
                 .asDriver(onErrorJustReturn: () )
+    
+    
+    let stream = InputStream(fileAtPath: "/Users/unbTech/desktop/demo.csv")!
+    let csv = try! CSVReader(stream: stream)
+    while let row = csv.next() {
+      print("\(row)")
+    }
+    
   }
 }
 

@@ -1,42 +1,36 @@
 PODS:
-  - Charts (3.0.4):
-    - Charts/Core (= 3.0.4)
-  - Charts/Core (3.0.4)
+  - Charts (3.0.5):
+    - Charts/Core (= 3.0.5)
+  - Charts/Core (3.0.5)
+  - CSV.swift (2.1.0)
   - Differentiator (3.0.2)
-  - RxCocoa (4.1.0):
+  - RxCocoa (4.1.2):
     - RxSwift (~> 4.0)
   - RxDataSources (3.0.2):
     - Differentiator (~> 3.0)
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
-  - RxSwift (4.1.0)
+  - RxSwift (4.1.2)
   - SnapKit (4.0.0)
-  - SSZipArchive (0.4.0)
-  - XlsxReaderWriter (1.0.11):
-    - SSZipArchive (~> 0.4)
-    - XMLDictionary (~> 1.4)
-  - XMLDictionary (1.4.1)
 
 DEPENDENCIES:
   - Charts (~> 3.0)
+  - CSV.swift (~> 2.1)
   - Differentiator (~> 3.0)
   - RxCocoa (~> 4.1)
   - RxDataSources (~> 3.0)
   - RxSwift (~> 4.1)
   - SnapKit (~> 4.0)
-  - XlsxReaderWriter (~> 1.0)
 
 SPEC CHECKSUMS:
-  Charts: 0705898046257443f0afbbc3179f4b67507b6e48
+  Charts: 45cdc985b764c838b35ee47eb1365d15735f6d1a
+  CSV.swift: a24fb11c17875523783fe963592762ff163ef8ea
   Differentiator: a87be69eba49ec4ab460c7671143ee3a9eececfd
-  RxCocoa: cc1fec49cdc8fabe645964de7c51c099a36c2aa8
+  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxDataSources: cb7c31e652a87ebb919da45f716bbb87b3765f6b
-  RxSwift: 4219941c1244c88002901bd87a69d3aea9ae71f0
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
-  SSZipArchive: d3d66fc0e3fb6ac0f723d95481aae71aae916cc3
-  XlsxReaderWriter: 7e4c5c9fb7c4e78e4edc89fa11f50c086540277c
-  XMLDictionary: fa07b6ff422b3a91d47a5de9bc82e3fc04fbd167
 
-PODFILE CHECKSUM: 99828d0016e1c4ad0168b4904a3f41bd2b62bb05
+PODFILE CHECKSUM: cfcbbc593de47edc6a507546d25bf154fdabc3ad
 
-COCOAPODS: 1.4.0.beta.2
+COCOAPODS: 1.4.0
