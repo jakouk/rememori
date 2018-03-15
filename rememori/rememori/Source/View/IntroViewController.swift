@@ -40,10 +40,6 @@ final class IntroViewController: UIViewController, ViewType {
     
     scrollView.addSubview(homeButton)
     homeButton.backgroundColor = .white
-    
-//    var documentPath = Bundle.main.path(forResource: "demo", ofType: "xlsx")
-//    var spreadsheet = BRAOfficeDocumentPackage.open(documentPath)
-//    var spreadsheet: BRAOfficeDocumentPackage
   }
   
   func constraintUI() {

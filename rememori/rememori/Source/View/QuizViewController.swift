@@ -17,6 +17,7 @@ final class QuizViewController: UIViewController, ViewType {
   private struct UI {
     static let viewBorderWith = CGFloat(0.5)
     static let viewBorderColor = UIColor.black.cgColor
+    static let buttonTitleColor = UIColor.black
   }
   
   // MARK: Properties
@@ -116,15 +117,35 @@ final class QuizViewController: UIViewController, ViewType {
     }
   }
   
+  // MARK: - -> Rx Event Binding
+  
   func setupEventBinding() {
     rx.viewWillAppear
       .bind(to: viewModel.viewWillAppear)
       .disposed(by: disposeBag)
     
-    
   }
+  
+  // MARK: - <- Rx UI Binding
   
   func setupUIBinding() {
     
+    viewModel.quizProblem
+      .drive(onNext: { [weak self] (array) in
+        let firstArray = array[0]
+        let secondAfterArray = array[1]
+        
+        self?.problemLabel.text = firstArray[0]
+        
+        self?.firstButton.setTitle(secondAfterArray[0], for: .normal)
+        self?.firstButton.setTitleColor(UI.buttonTitleColor, for: .normal)
+        self?.secondButton.setTitle(secondAfterArray[1], for: .normal)
+        self?.secondButton.setTitleColor(UI.buttonTitleColor, for: .normal)
+        self?.thirdButton.setTitle(secondAfterArray[2], for: .normal)
+        self?.thirdButton.setTitleColor(UI.buttonTitleColor, for: .normal)
+        self?.fourthButton.setTitle(secondAfterArray[3], for: .normal)
+        self?.fourthButton.setTitleColor(UI.buttonTitleColor, for: .normal)
+        
+      }).disposed(by: disposeBag)
   }
 }
