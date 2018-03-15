@@ -52,11 +52,18 @@ struct IntroViewModel: IntroViewModelType, IntroViewModelInputs, IntroViewModelO
     showHome = didTapHomeButton
                 .asDriver(onErrorJustReturn: () )
     
+    var firstArray = [String]()
+    var secondArray = [String]()
     
     let stream = InputStream(fileAtPath: "/Users/unbTech/desktop/demo.csv")!
     let csv = try! CSVReader(stream: stream)
+    
+    var array = [[String]]()
+    
     while let row = csv.next() {
-      print("\(row)")
+      print("\(row[0])")
+      firstArray.append(row[0])
+      
     }
     
   }

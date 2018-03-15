@@ -15,7 +15,8 @@ final class QuizViewController: UIViewController, ViewType {
   // MARK: UI Metrics
   
   private struct UI {
-    
+    static let viewBorderWith = CGFloat(0.5)
+    static let viewBorderColor = UIColor.black.cgColor
   }
   
   // MARK: Properties
@@ -26,6 +27,9 @@ final class QuizViewController: UIViewController, ViewType {
   private let quizView = UIView()
   private let chooseView = UIView()
   
+  private let problemView = UIView()
+  private let problemLabel = UILabel()
+  
   private let firstButton = UIButton()
   private let secondButton = UIButton()
   private let thirdButton = UIButton()
@@ -34,24 +38,35 @@ final class QuizViewController: UIViewController, ViewType {
   func setupUI() {
     view.backgroundColor = UIColor.white
     
-    quizView.backgroundColor = .gray
+    quizView.backgroundColor = .white
     
     view.addSubview(quizView)
     view.addSubview(chooseView)
     
-    chooseView.addSubview(firstButton)
-    chooseView.addSubview(secondButton)
-    chooseView.addSubview(thirdButton)
-    chooseView.addSubview(fourthButton)
+    quizView.addSubviews([problemView])
+    problemView.addSubviews([problemLabel])
+    chooseView.addSubviews([firstButton, secondButton, thirdButton, fourthButton])
     
-    firstButton.layer.borderWidth = 0.5
-    firstButton.layer.borderColor = UIColor.black.cgColor
-    secondButton.layer.borderWidth = 0.5
-    secondButton.layer.borderColor = UIColor.black.cgColor
-    thirdButton.layer.borderWidth = 0.5
-    thirdButton.layer.borderColor = UIColor.black.cgColor
-    fourthButton.layer.borderWidth = 0.5
-    fourthButton.layer.borderColor = UIColor.black.cgColor
+//    chooseView.addSubview(firstButton)
+//    chooseView.addSubview(secondButton)
+//    chooseView.addSubview(thirdButton)
+//    chooseView.addSubview(fourthButton)
+    
+    problemView.layer.borderWidth = UI.viewBorderWith
+    problemView.layer.borderColor = UI.viewBorderColor
+    
+    problemLabel.textAlignment = .center
+    problemLabel.numberOfLines = 1
+    problemLabel.adjustsFontSizeToFitWidth = true
+    
+    firstButton.layer.borderWidth = UI.viewBorderWith
+    firstButton.layer.borderColor = UI.viewBorderColor
+    secondButton.layer.borderWidth = UI.viewBorderWith
+    secondButton.layer.borderColor = UI.viewBorderColor
+    thirdButton.layer.borderWidth = UI.viewBorderWith
+    thirdButton.layer.borderColor = UI.viewBorderColor
+    fourthButton.layer.borderWidth = UI.viewBorderWith
+    fourthButton.layer.borderColor = UI.viewBorderColor
   }
   
   func constraintUI() {
@@ -60,6 +75,15 @@ final class QuizViewController: UIViewController, ViewType {
       make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
       make.bottom.equalTo(chooseView.snp.top)
       make.height.equalTo(chooseView)
+    }
+    
+    problemView.snp.makeConstraints { make in
+      make.left.top.equalToSuperview().offset(20)
+      make.right.bottom.equalToSuperview().offset(-20)
+    }
+    
+    problemLabel.snp.makeConstraints { make in
+      make.left.right.top.bottom.equalToSuperview()
     }
     
     chooseView.snp.makeConstraints { make in

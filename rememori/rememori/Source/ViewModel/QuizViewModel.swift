@@ -10,6 +10,8 @@ import RxCocoa
 import RxDataSources
 import RxSwift
 
+import CSV
+
 protocol QuizViewModelType: ViewModelType {
   var viewWillAppear: PublishSubject<Void> { get }
 }
@@ -29,6 +31,14 @@ struct QuizViewModel: QuizViewModelType {
   // MARK: Output
   // MARK: - Initialize
   init() {
+    
+    let stream = InputStream(fileAtPath: "/Users/unbTech/desktop/demo.csv")!
+    let csv = try! CSVReader(stream: stream)
+    while let row = csv.next() {
+      print("\(row)")
+    }
+    
+    
     
   }
 }
