@@ -43,31 +43,32 @@ final class IntroViewController: UIViewController, ViewType {
   }
   
   func constraintUI() {
+    
     scrollView.snp.makeConstraints { make in
       make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
-      make.left.right.equalTo(0)
+      make.leading.trailing.equalTo(0)
       make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
     }
     
     imageViews[0].snp.makeConstraints { make in
       make.top.equalTo(scrollView.snp.top)
-      make.left.equalTo(0)
-      make.right.equalTo(imageViews[1].snp.left)
+      make.leading.equalTo(0)
+      make.trailing.equalTo(imageViews[1].snp.leading)
       make.bottom.equalTo(scrollView.snp.bottom)
       make.width.equalTo(imageViews[1].snp.width)
     }
     
     imageViews[1].snp.makeConstraints { make in
       make.top.equalTo(scrollView.snp.top)
-      make.left.equalTo(imageViews[0].snp.right)
-      make.right.equalTo(0)
+      make.leading.equalTo(imageViews[0].snp.trailing)
+      make.trailing.equalTo(0)
       make.bottom.equalTo(scrollView.snp.bottom)
     }
     
     homeButton.snp.makeConstraints { make in
       make.height.equalTo(44)
       make.width.equalTo(100)
-      make.right.equalToSuperview().offset(-20)
+      make.trailing.equalToSuperview().offset(-20)
       make.bottom.equalToSuperview().offset(-20)
     }
   }

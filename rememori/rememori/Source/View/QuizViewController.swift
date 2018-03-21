@@ -72,29 +72,29 @@ final class QuizViewController: UIViewController, ViewType {
   
   func constraintUI() {
     quizView.snp.makeConstraints { make in
-      make.left.right.equalToSuperview()
+      make.leading.trailing.equalToSuperview()
       make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
       make.bottom.equalTo(chooseView.snp.top)
       make.height.equalTo(chooseView)
     }
     
     problemView.snp.makeConstraints { make in
-      make.left.top.equalToSuperview().offset(20)
-      make.right.bottom.equalToSuperview().offset(-20)
+      make.leading.top.equalToSuperview().offset(20)
+      make.trailing.bottom.equalToSuperview().offset(-20)
     }
     
     problemLabel.snp.makeConstraints { make in
-      make.left.right.top.bottom.equalToSuperview()
+      make.leading.trailing.top.bottom.equalToSuperview()
     }
     
     chooseView.snp.makeConstraints { make in
-      make.left.right.equalToSuperview()
+      make.leading.trailing.equalToSuperview()
       make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
     }
     
     firstButton.snp.makeConstraints { make in
-      make.top.left.equalToSuperview().offset(20)
-      make.right.equalTo(secondButton.snp.left).offset(-20)
+      make.top.leading.equalToSuperview().offset(20)
+      make.trailing.equalTo(secondButton.snp.leading).offset(-20)
       make.bottom.equalTo(thirdButton.snp.top).offset(-20)
       make.width.height.equalTo(secondButton)
       make.width.height.equalTo(thirdButton)
@@ -103,17 +103,17 @@ final class QuizViewController: UIViewController, ViewType {
     
     secondButton.snp.makeConstraints { make in
       make.top.equalToSuperview().offset(20)
-      make.right.equalToSuperview().offset(-20)
+      make.trailing.equalToSuperview().offset(-20)
       make.bottom.equalTo(fourthButton.snp.top).offset(-20)
     }
     
     thirdButton.snp.makeConstraints { make in
-      make.left.equalToSuperview().offset(20)
+      make.leading.equalToSuperview().offset(20)
       make.bottom.equalToSuperview().offset(-20)
     }
     
     fourthButton.snp.makeConstraints { make in
-      make.right.bottom.equalToSuperview().offset(-20)
+      make.trailing.bottom.equalToSuperview().offset(-20)
     }
   }
   
@@ -132,6 +132,7 @@ final class QuizViewController: UIViewController, ViewType {
     
     viewModel.quizProblem
       .drive(onNext: { [weak self] (array) in
+        
         let firstArray = array[0]
         let secondAfterArray = array[1]
         
@@ -139,13 +140,17 @@ final class QuizViewController: UIViewController, ViewType {
         
         self?.firstButton.setTitle(secondAfterArray[0], for: .normal)
         self?.firstButton.setTitleColor(UI.buttonTitleColor, for: .normal)
+        
         self?.secondButton.setTitle(secondAfterArray[1], for: .normal)
         self?.secondButton.setTitleColor(UI.buttonTitleColor, for: .normal)
+        
         self?.thirdButton.setTitle(secondAfterArray[2], for: .normal)
         self?.thirdButton.setTitleColor(UI.buttonTitleColor, for: .normal)
+        
         self?.fourthButton.setTitle(secondAfterArray[3], for: .normal)
         self?.fourthButton.setTitleColor(UI.buttonTitleColor, for: .normal)
         
       }).disposed(by: disposeBag)
+    
   }
 }
