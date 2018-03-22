@@ -124,6 +124,29 @@ final class QuizViewController: UIViewController, ViewType {
       .bind(to: viewModel.viewWillAppear)
       .disposed(by: disposeBag)
     
+    Observable.merge(firstButton.rx.tap.asObservable(), secondButton.rx.tap.asObservable(),
+                     thirdButton.rx.tap.asObservable(), fourthButton.rx.tap.asObservable())
+      .bind(to: viewModel.resultTapButton)
+      .disposed(by: disposeBag)
+    
+    // 위의 코드로 하나로 합침.
+    
+//    firstButton.rx.tap
+//      .bind(to: viewModel.resultTapButton)
+//      .disposed(by: disposeBag)
+//
+//    secondButton.rx.tap
+//      .bind(to: viewModel.resultTapButton)
+//      .disposed(by: disposeBag)
+//
+//    thirdButton.rx.tap
+//      .bind(to: viewModel.resultTapButton)
+//      .disposed(by: disposeBag)
+//
+//    fourthButton.rx.tap
+//      .bind(to: viewModel.resultTapButton)
+//      .disposed(by: disposeBag)
+    
   }
   
   // MARK: - <- Rx UI Binding
@@ -133,21 +156,21 @@ final class QuizViewController: UIViewController, ViewType {
     viewModel.quizProblem
       .drive(onNext: { [weak self] (array) in
         
-        let firstArray = array[0]
-        let secondAfterArray = array[1]
+        let firstArray = array.first
+        let secondAfterArray = array.last
         
-        self?.problemLabel.text = firstArray[0]
+        self?.problemLabel.text = firstArray?.first
         
-        self?.firstButton.setTitle(secondAfterArray[0], for: .normal)
+        self?.firstButton.setTitle(secondAfterArray?[0], for: .normal)
         self?.firstButton.setTitleColor(UI.buttonTitleColor, for: .normal)
         
-        self?.secondButton.setTitle(secondAfterArray[1], for: .normal)
+        self?.secondButton.setTitle(secondAfterArray?[1], for: .normal)
         self?.secondButton.setTitleColor(UI.buttonTitleColor, for: .normal)
         
-        self?.thirdButton.setTitle(secondAfterArray[2], for: .normal)
+        self?.thirdButton.setTitle(secondAfterArray?[2], for: .normal)
         self?.thirdButton.setTitleColor(UI.buttonTitleColor, for: .normal)
         
-        self?.fourthButton.setTitle(secondAfterArray[3], for: .normal)
+        self?.fourthButton.setTitle(secondAfterArray?[3], for: .normal)
         self?.fourthButton.setTitleColor(UI.buttonTitleColor, for: .normal)
         
       }).disposed(by: disposeBag)

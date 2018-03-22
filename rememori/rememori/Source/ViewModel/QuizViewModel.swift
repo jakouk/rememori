@@ -15,6 +15,7 @@ import CSV
 protocol QuizViewModelType: ViewModelType {
   // Event
   var viewWillAppear: PublishSubject<Void> { get }
+  var resultTapButton: PublishSubject<Void> { get }
   
   // UI
   var quizProblem: Driver<[[String]]> { get }
@@ -27,7 +28,7 @@ struct QuizViewModel: QuizViewModelType {
   // MARK: Input
   // MARK: -> Event
   let viewWillAppear = PublishSubject<Void>()
-  
+  let resultTapButton = PublishSubject<Void>()
   
   // MARK: Output
   // MARK: <- UI
