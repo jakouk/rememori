@@ -5,8 +5,8 @@ sudo: required
 
 script:
   - xcodebuild clean build test
-    -project "LeptirFrame.xcodeproj"
-    -scheme "LeptirFrame"
+    -project "rememori.xcodeproj"
+    -scheme "rememori"
     -sdk "iphonesimulator11.3"
     -destination "platform=iOS Simulator,name=iPhone 8,OS=11.2.6"
     -configuration Release
